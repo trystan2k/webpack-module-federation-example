@@ -1,0 +1,20 @@
+{
+  "name": "mfe-example",
+  "version": "1.0.0",
+  "private": "true",
+  "scripts": {
+    "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
+    "clean:build": "npx lerna run clean",
+    "develop": "NODE_ENV=development npx lerna run develop --parallel",
+    "start": "npx lerna run start --parallel",
+    "build": "npx lerna run build --parallel"
+  },
+  "author": "Thiago Mendonca <thiago.mendonca@gft.com>",
+  "dependencies": {
+    "lerna": "^4.0.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT"
+}
