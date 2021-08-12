@@ -6,7 +6,7 @@
     "build": "NODE_ENV=production webpack",
     "watch": "webpack --watch",
     "develop": "NODE_ENV=development webpack serve --port 3002",
-    "clean": "rm -rf build"
+    "clean": "rm -rf build node_modules"
   },
   "dependencies": {
     "@babel/core": "7.13.15",

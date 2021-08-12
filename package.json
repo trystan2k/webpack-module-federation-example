@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "private": "true",
   "scripts": {
-    "clean": "npx lerna clean -y && npx nx run-many --all --target=clean --parallel --maxParallel=10 && rm -rf build node_modules",
+    "clean": "npx nx run-many --all --target=clean --parallel --maxParallel=10 && rm -rf node_modules",
     "clean:build": "npx nx run-many --all --target=clean --parallel --maxParallel=10",
     "develop": "NODE_ENV=development npx nx run-many --all --target=develop --parallel --maxParallel=10",
     "start": "npx nx run-many --all --target=start --parallel --maxParallel=10",
-    "build": "npx nx run-many --all --target=build --parallel --maxParallel=10",
-    "postinstall": "lerna bootstrap --hoist"
+    "build": "npx nx run-many --all --target=build --parallel --maxParallel=10"
   },
   "author": "Thiago Mendonca <thiago.mendonca@gft.com>",
-  "dependencies": {
-    "lerna": "^4.0.0"
-  },
+  "workspaces": [
+    "packages/*"
+  ],  
   "license": "MIT",
   "devDependencies": {
     "@nrwl/workspace": "latest",
