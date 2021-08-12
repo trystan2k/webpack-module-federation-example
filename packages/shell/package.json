@@ -5,7 +5,7 @@
     "start": "ws -d build --spa index.html --port 3000 -z",
     "build": "NODE_ENV=production webpack",
     "develop": "NODE_ENV=development webpack serve --port 3000",
-    "clean": "rm -rf build"
+    "clean": "rm -rf build node_modules"
   },
   "dependencies": {
     "@babel/core": "7.13.15",
