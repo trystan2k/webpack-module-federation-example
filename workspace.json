@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "projects": {
+    "@mfes/about": {
+      "root": "packages/about",
+      "type": "library"
+    },
+    "@mfes/dashboard": {
+      "root": "packages/dashboard",
+      "type": "library"
+    },
+    "@mfes/login": {
+      "root": "packages/login",
+      "type": "library"
+    },
+    "@mfes/shell": {
+      "root": "packages/shell",
+      "type": "library"
+    },
+    "@mfes/static": {
+      "root": "packages/static",
+      "type": "library"
+    },
+    "@mfes/todo": {
+      "root": "packages/todo",
+      "type": "library"
+    }
+  }
+}

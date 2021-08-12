@@ -1,20 +1,35 @@
 {
-  "name": "mfe-example",
-  "version": "1.0.0",
-  "private": "true",
-  "scripts": {
-    "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
-    "clean:build": "npx lerna run clean",
-    "develop": "NODE_ENV=development npx lerna run develop --parallel",
-    "start": "npx lerna run start --parallel",
-    "build": "npx lerna run build --parallel"
-  },
-  "author": "Thiago Mendonca <thiago.mendonca@gft.com>",
-  "dependencies": {
-    "lerna": "^4.0.0"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "license": "MIT"
+	"name": "mfe-example",
+	"version": "1.0.0",
+	"private": "true",
+	"author": "Thiago Mendonca <thiago.mendonca@gft.com>",
+	"dependencies": {
+		"@babel/core": "7.13.15",
+		"@babel/preset-env": "7.13.15",
+		"@babel/preset-react": "7.13.13",
+		"@material-ui/core": "^4.12.3",
+		"@material-ui/styles": "^4.11.4",
+		"babel-loader": "8.2.2",
+		"dotenv": "8.2.0",
+		"html-webpack-plugin": "5.3.1",
+		"lerna": "^4.0.0",
+		"local-web-server": "4.2.1",
+		"react": "17.0.2",
+		"react-dom": "17.0.2",
+		"react-router-dom": "5.2.0",
+		"url-loader": "^4.1.1",
+		"webpack": "5.33.2",
+		"webpack-cli": "4.6.0",
+		"webpack-dev-server": "3.11.2"
+	},
+	"engines": {
+		"npm": "^6.0.0"
+	},
+	"license": "MIT",
+	"devDependencies": {
+		"@nrwl/cli": "latest",
+		"@nrwl/tao": "latest",
+		"@nrwl/workspace": "latest",
+		"typescript": "4.2.4"
+	}
 }
