@@ -10,6 +10,19 @@ NX also has a nice feature that caches disk output, so if you run `npm run build
 
 In this case, Lerna is used to link packages dependency and hoist packages dependencies to root node_modules, so all packages has access to them. This necessary when using NPM v6 (before npm workspaces were implemented in v7).
 
+## Cons & Pros
+
+### Pros
+
+- It is was not generated using create-react-app we have access to Webpack configuration.
+- All apps are in a Monorepo that can also contain libraries (like a design system or shared components)
+- Module federation works as expected
+
+### Cons
+
+- New apps needs to be generated manually or via a custom CLI as we can't use CRA.
+- NPM 6 is out of date
+
 # Steps
 
 Execute `npm install` to install all dependencies

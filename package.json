@@ -31,5 +31,13 @@
 		"@nrwl/tao": "latest",
 		"@nrwl/workspace": "latest",
 		"typescript": "4.2.4"
+	},
+	"scripts": {
+		"postinstall": "lerna bootstrap",
+		"develop": "npx nx run-many --all --target=develop --parallel --maxParallel=10",
+		"start": "npx nx run-many --all --target=develop --parallel --maxParallel=10",
+		"build": "npx nx run-many --all --target=develop --parallel --maxParallel=10",
+		"clean": "npx nx run-many --all --target=develop --parallel --maxParallel=10"
+
 	}
 }
