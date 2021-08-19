@@ -16,8 +16,6 @@ module.exports = {
       remotes: {
         app_dashboard: buildRemoteUrl('app_dashboard'),
         app_login: buildRemoteUrl('app_login')
-        // app_dashboard: "app_dashboard@../dashboard/dashboardRemoteEntry.js",
-        //app_login: "app_login@../login/loginRemoteEntry.js"
       },  
       shared: {
         ...deps,
@@ -32,14 +30,6 @@ module.exports = {
         "react-router-dom": {
           singleton: true,
           requiredVersion: deps["react-router-dom"],
-        },
-        "@material-ui/core": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/core"],
-        },
-        "@material-ui/styles": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/styles"]
         }
       }
     })

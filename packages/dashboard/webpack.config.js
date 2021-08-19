@@ -31,14 +31,6 @@ module.exports = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        },
-        "@material-ui/core": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/core"],
-        },
-        "@material-ui/styles": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/styles"]
         }
       }
     })

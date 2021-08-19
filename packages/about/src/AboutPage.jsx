@@ -1,16 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import { MemoryRouter, Link, Route, Switch } from "react-router-dom";
 import SubRoute1 from './SubRoute1';
 import SubRoute2 from './SubRoute2';
+import { AuthContext } from "@mfes/shared-library";
 
-const TodoPage = React.lazy(() => import("app_todo/TodoPage"));
+const TodoMFE = React.lazy(() => import("app_todo/TodoMFE"));
 
 export default function AboutPage() {
+  const {authState, setAuthState} = useContext(AuthContext);
+
   return (
     <MemoryRouter>
       <Switch>
         <Route exact path='/'>
-          <p>Hi, I m a PoC-Dashboard-Box</p>
+          <p>Hi <strong>{authState.user}</strong>, I m a PoC-Dashboard-Box</p>
+          <p> Here are your logged user info:</p>
+          <p><strong>Name</strong>: {authState.firstName} {authState.lastName}</p>
+          <p><strong>Email</strong>: {authState.email} </p>
+          <p><strong>Role</strong>: {authState.role} </p>
           <p>You can navigate among these two MFE routes:</p>            
           <div>
             <ul>
@@ -29,7 +36,7 @@ export default function AboutPage() {
         </Route> 
         <Route path='/todo-list'>
           <h4>This component came from another MFE</h4>
-          <TodoPage/>
+          <TodoMFE/>
           <Link to="/">Back</Link>
         </Route>                
       </Switch>

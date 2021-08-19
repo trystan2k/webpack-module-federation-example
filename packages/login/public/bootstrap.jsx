@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import LoginPage from "../src/LoginPage";
+import App from "../src/App";
 
-ReactDOM.render(<LoginPage />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

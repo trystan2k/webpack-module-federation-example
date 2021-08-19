@@ -4,6 +4,14 @@
 
 In this case, NPM v7 workspaces feature are been used so all dependencies are hoisted to root node_modules and all packages has access to them and use Lerna to execute a command on all monorepo packages
 
+# i18n
+
+This example also contains i18n (using i18next and react-i18next) to show that even with remote microfrontends managed by Module Federation, we are able to share the same i18next instance (and thus a change in the language in one page will be send to all pages/MFEs using it) and even overwrite translations of a MFE from another one.
+
+# Authentication (React Context API)
+
+This example includes a very simple authentication feature just to show that it is also possible to use React Context API with remote MFEs. When user logins at the home page, a token is generated and stored in the Context and later retrieved in another MFE to be able to check if user is still logged and show some information get from authentication fake system.
+
 ## Cons & Pros
 
 ### Pros

@@ -16,7 +16,7 @@ module.exports = {
       name: APP_NAME,
       filename: `${version}/${moduleFedereationRemotes[APP_NAME].filename}`,
       exposes: {
-        "./TodoPage": "./src/TodoPage",
+        "./TodoMFE": "./src/App",
       },    
       shared: {
         ...deps,
@@ -27,14 +27,6 @@ module.exports = {
         "react-dom": {
           singleton: true,
           requiredVersion: deps["react-dom"],
-        },
-        "@material-ui/core": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/core"],
-        },
-        "@material-ui/styles": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/styles"]
         }
       }
     })

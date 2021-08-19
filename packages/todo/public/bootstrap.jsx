@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import TodoPage from "../src/TodoPage";
+import App from "../src/App";
 
-ReactDOM.render(<TodoPage />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

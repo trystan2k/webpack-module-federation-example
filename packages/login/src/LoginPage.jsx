@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Button, 
   CssBaseline,
@@ -10,9 +10,11 @@ import {
   Typography,
   Container,
 } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 import { makeStyles } from '@material-ui/core/styles';
 
 import logo from "./assets/img/logo.png";
+
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -31,13 +33,26 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function LoginPage(props) {
+  const [userName, setUserName] = useState('');
+  const [password, setPassword] = useState('');
+
   const classes = useStyles();
+  const { t } = useTranslation();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('submited');
-    props.onSubmit();
+    props.onSubmit && props.onSubmit({userName, password});
+    setUserName('');
+    setPassword('');
   }
+
+  const userNameHandler = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const passwordHandler = (event) => {
+    setPassword(event.target.value);
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -45,7 +60,7 @@ export default function LoginPage(props) {
       <div className={classes.paper}>
         <img src={logo} />
         <Typography component="h1" variant="h5">
-          Sign in
+          {t("login:title")}
         </Typography>
         <form className={classes.form} noValidate onSubmit={handleSubmit}>
           <TextField
@@ -54,10 +69,12 @@ export default function LoginPage(props) {
             required
             fullWidth
             id="email"
-            label="Email Address"
+            label={t("login:emailAddress")}
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={userNameHandler}
+            value={userName}
           />
           <TextField
             variant="outlined"
@@ -65,14 +82,16 @@ export default function LoginPage(props) {
             required
             fullWidth
             name="password"
-            label="Password"
+            label={t("login:password")}
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={passwordHandler}
+            value={password}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
-            label="Remember me"
+            label={t("login:rememberMe")}
           />
           <Button
             type="submit"
@@ -81,17 +100,17 @@ export default function LoginPage(props) {
             color="primary"
             className={classes.submit}
           >
-            Sign In
+            {t("login:signIn")}
           </Button>
           <Grid container>
             <Grid item xs>
               <Link href="#" variant="body2">
-                Forgot password?
+                {t("login:forgotPassword")}
               </Link>
             </Grid>
             <Grid item>
               <Link href="#" variant="body2">
-                {"Don't have an account? Sign Up"}
+                {t("login:signup")}
               </Link>
             </Grid>
           </Grid>

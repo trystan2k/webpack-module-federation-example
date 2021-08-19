@@ -16,7 +16,7 @@ module.exports = {
       name: APP_NAME,
       filename: `${version}/${moduleFedereationRemotes[APP_NAME].filename}`,
       exposes: {
-        "./LoginPage": "./src/LoginPage",
+        "./LoginMFE": "./src/App",
       },        
       shared: {
         ...deps,
@@ -28,14 +28,6 @@ module.exports = {
           singleton: true,
           requiredVersion: deps["react-dom"],
         },
-        "@material-ui/core": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/core"],
-        },
-        "@material-ui/styles": {
-          singleton: true,
-          requiredVersion: deps["@material-ui/styles"]
-        }
       }
     })
   ],

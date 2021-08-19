@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import Orders from "./Orders"
 
-const TodoPage = React.lazy(() => import("app_todo/TodoPage"));
+const TodoMFE = React.lazy(() => import("app_todo/TodoMFE"));
 const AboutPage = React.lazy(() => import("app_about/AboutPage"));
 
 const GridItem = styled(Grid)({
@@ -38,7 +38,7 @@ export default function DashboardPage() {
           </GridItem>
           <GridItem item xs={4}>
             <React.Suspense fallback="Loading">
-              <TodoPage/>
+              <TodoMFE/>
             </React.Suspense>  
           </GridItem>
           <GridItem item xs={4}>

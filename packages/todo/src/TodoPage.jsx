@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { FormControlLabel, Checkbox } from "@material-ui/core";
+import { useTranslation } from "react-i18next";
 
 export default function TodoPage() {
   const [todoList, setTodoList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const { t } = useTranslation();
 
   useEffect(() => {
     fetch(
@@ -31,7 +33,7 @@ export default function TodoPage() {
 
   return (
     <div>
-      <h2>List of Todos</h2>  
+      <h2>{t("todo:title")}</h2>  
       {isLoading && <p>Loading tasks...</p>}
       {todoList.map((item, index) => (
         <div key={index}>
