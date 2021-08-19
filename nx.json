@@ -1,0 +1,49 @@
+{
+  "npmScope": "nx-module-federation-example",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "about": {
+      "tags": []
+    },
+    "dashboard": {
+      "tags": []
+    },
+    "login": {
+      "tags": []
+    },
+    "shell": {
+      "tags": []
+    },
+    "static": {
+      "tags": []
+    },
+    "todo": {
+      "tags": []
+    }
+  }
+}
