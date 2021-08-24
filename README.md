@@ -1,8 +1,17 @@
 ### webpack-module-federation-example
 
-# Lerna + NPM v7
+# Lerna + Yarn 
 
-In this case, NPM v7 workspaces feature are been used so all dependencies are hoisted to root node_modules and all packages has access to them and use Lerna to execute a command on all monorepo packages
+In this case it uses Lerna + Yarn workspace to manage the shared dependencies and link between packages in the monorepo. And also it uses Lerna to execute commands in all packages at once. Yarn is also important as we are using a CRA beta version with CRACO version that does not support Webpack 4 and we need to use Yarn `resolutions` feature to force installation of newer dependencies. 
+
+# create-react-app (CRA) + Module federation
+
+Module federation is only available in Webpack v5. Currently create-react-app only supports Webpack v4. This example use a beta version of CRA (v5-beta) that add Webpack v5 support. This forces the setup to use Yarn to be able to force version of specifics dependencies. 
+
+# CRACO + CRA
+
+Since when scaffolding a project with CRA we are not able to configure Webpack (needed to enable Module Federation), it was necessary to use a tool called [CRACO](https://github.com/gsoft-inc/craco) which add the ability to extend CRA Webpack configuration without the need to Eject (an undoable operation). This allow us to continue to use react-scripts and get updates.
+
 
 # i18n
 
@@ -16,26 +25,29 @@ This example includes a very simple authentication feature just to show that it 
 
 ### Pros
 
-- It is was not generated using create-react-app we have access to Webpack configuration.
+- We could still use CRA to generate the project and still be able to setup Module Federation (using CRACO).
 - All apps are in a Monorepo that can also contain libraries (like a design system or shared components)
 - Module federation works as expected
 
 ### Cons
 
-- New apps needs to be generated manually or via a custom CLI as we can't use CRA.
+- Still using a beta version of CRA
+- Needed to force resolution of some dependencies
+
+**It is expected that once CRA v5 gets released, they will work in a plugin to allow Module Federation, so in the long run it will probably be possible to use CRA + Module Federation without the need of any external tool (CRACO, for example)**
 
 # Steps
 
-Execute `npm install` to install all dependencies
+Execute `yarn` to install all dependencies
 
 To start the MFEs in development mode, just execute:
 
-`npm run develop`
+`yarn develop`
 
 To build for production execute the command:
 
-`npm run build`
+`yarn build`
 
 Once the build is finished, you can start a simple local web server with:
 
-`npm run start`
+`yarn start`

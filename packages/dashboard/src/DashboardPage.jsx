@@ -29,6 +29,7 @@ export default function DashboardPage() {
   return (
     <main className={classes.content}>
       <h1>Dashboard !</h1>
+      <p>This Dashboard page shows how multiple Micro frontends can be loaded in the same page using Module Federation. Subrouting within them works without affecting the URL or the other content in the page.</p>
       <Container maxWidth={false}>
         <Grid container spacing={2}>
           <GridItem item xs={4}>

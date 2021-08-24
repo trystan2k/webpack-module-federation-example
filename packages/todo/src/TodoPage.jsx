@@ -9,7 +9,7 @@ export default function TodoPage() {
 
   useEffect(() => {
     fetch(
-      `http://localhost:5000/todos.json`,
+      `http://localhost:5001/todos.json`,
       {
         method: "GET"
       }

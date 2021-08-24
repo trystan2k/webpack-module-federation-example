@@ -10,7 +10,7 @@ import { AuthRoute } from "./AuthRoute";
 import Home from "./Home";
 import Dashboard from "./Dashboard";
 
-import '../utils/i18n';
+import './utils/i18n';
 
 export function App() {
 

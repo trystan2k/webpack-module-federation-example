@@ -58,7 +58,7 @@ export default function LoginPage(props) {
     <Container component="main" maxWidth="xs">
       <CssBaseline />
       <div className={classes.paper}>
-        <img src={logo} />
+        <img src={logo} alt="Logo"/>
         <Typography component="h1" variant="h5">
           {t("login:title")}
         </Typography>

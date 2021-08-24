@@ -2,8 +2,8 @@
     "version": "1.0.0",
     "name": "@mfes/static",
     "scripts": {
-      "start": "ws --port 5000",
-      "develop": "ws --port 5000"
+      "start": "ws --port 5001",
+      "develop": "ws --port 5001"
     },
     "devDependencies": {
       "local-web-server": "4.2.1"

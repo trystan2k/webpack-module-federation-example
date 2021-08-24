@@ -7,7 +7,7 @@ import { AuthContext } from "@mfes/shared-library";
 const TodoMFE = React.lazy(() => import("app_todo/TodoMFE"));
 
 export default function AboutPage() {
-  const {authState, setAuthState} = useContext(AuthContext);
+  const {authState} = useContext(AuthContext);
 
   return (
     <MemoryRouter>
@@ -36,7 +36,9 @@ export default function AboutPage() {
         </Route> 
         <Route path='/todo-list'>
           <h4>This component came from another MFE</h4>
-          <TodoMFE/>
+          <React.Suspense fallback={<div>Loading...</div>}>
+            <TodoMFE/>
+          </React.Suspense>
           <Link to="/">Back</Link>
         </Route>                
       </Switch>

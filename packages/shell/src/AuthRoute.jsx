@@ -10,7 +10,7 @@ export const AuthRoute = (props) => {
     if (!authState.isAuthenticated) {
       history.push("/");
     }
-  }, [props?.location?.pathname]);
+  }, [props?.location?.pathname, history, authState.isAuthenticated]);
 
   return <Route {...props} />;
 };

@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "private": "true",
   "scripts": {
+    "kill-ports": "npx kill-port --port 3000,3001,3002,3003,3004,5001",
     "clean": "npx lerna clean -y && npx lerna run clean && rm -rf build node_modules",
     "clean:build": "npx lerna run clean",
-    "develop": "NODE_ENV=development npx lerna run develop --parallel",
+    "develop": "npm run kill-ports && BROWSER=none NODE_ENV=development npx lerna run develop --parallel",
     "start": "npx lerna run start --parallel",
-    "build": "npx lerna run build --parallel"
+    "build": "npx lerna run build --parallel",
+    "lint": "npx lerna run lint --parallel"
   },
   "author": "Thiago Mendonca <thiago.mendonca@gft.com>",
   "workspaces": [
@@ -16,5 +18,9 @@
   "license": "MIT",
   "dependencies": {
     "lerna": "^4.0.0"
+  },
+  "resolutions": {
+    "workbox-webpack-plugin": "6.2.0",
+    "@pmmmwh/react-refresh-webpack-plugin": "0.5.0-rc.4"
   }
 }

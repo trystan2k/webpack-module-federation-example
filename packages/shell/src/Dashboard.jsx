@@ -19,7 +19,7 @@ export default function Dashboard() {
   };
   return (
     <React.Fragment>
-      <Link to="/" onClick={logoutHandler}>
+      <Link style={{ position: "absolute", right: "20px", top: "50px"}} to="/" onClick={logoutHandler}>
         Logout
       </Link>
       <React.Suspense fallback="Loading">
