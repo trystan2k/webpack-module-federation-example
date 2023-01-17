@@ -17,16 +17,12 @@
     "react-scripts": "^5.0.1",
     "web-vitals": "^1.1.2"
   },
-  "resolutions": {
-    "workbox-webpack-plugin": "6.2.0",
-    "@pmmmwh/react-refresh-webpack-plugin": "0.5.0-rc.4"
-  },
   "scripts": {
     "start": "ws -d build --spa index.html --port 3003 -z",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build": "craco build",
-    "develop": "cross-env PORT=3003 craco start",
+    "build": "node ./scripts/build.js",
+    "develop": "cross-env PORT=3003 node ./scripts/start.js",
     "clean": "rm -rf build",
     "lint": "eslint './src/**/*.{js,jsx,ts,tsx}' --max-warnings=5"
   },
@@ -49,8 +45,6 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^6.2.0",
-    "craco-module-federation": "^1.1.0-rc.2",
     "cross-env": "^7.0.3",
     "local-web-server": "4.2.1"
   }
